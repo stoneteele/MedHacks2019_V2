@@ -29,10 +29,16 @@
   font-size: 2rem;
 }
 
-.btn-primary {
+.home-signup {
   background-color: #FBAB18;
   font-weight: bold;
 }
+
+.home-login {
+  background-color: #888;
+  font-weight: 700;
+}
+
 .btn-primary:hover {
   background-color: #E59D24;
 }
