@@ -123,5 +123,61 @@
 	<div class="text-center">Already have an account? <a href="login">Login here</a>.</div>
 </div>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"> </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-auth.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyAd3XJAP1nxi5xP9LzzI9n4vLnlL2-QCU0",
+      authDomain: "rubberducksmedhack2019.firebaseapp.com",
+      databaseURL: "https://rubberducksmedhack2019.firebaseio.com",
+      projectId: "rubberducksmedhack2019",
+      storageBucket: "rubberducksmedhack2019.appspot.com",
+      messagingSenderId: "29796370118",
+      appId: "1:29796370118:web:bb2ca152c88435efc4b9c7",
+      measurementId: "G-PKNSC0DF7W"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    $("form").submit(function(e) {
+        e.preventDefault();
+        e.returnValue = false;
+
+        var email = document.getElementById("email").value;
+        var pass = document.getElementById("pass").value;
+        var passConfirm = document.getElementById("passConfirm").value;
+
+        if (pass === passConfirm) {
+          firebase.auth().createUserWithEmailAndPassword(email, pass).catch(function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+        } else {
+          // mismatch passwords
+        }
+
+
+      });
+    });
+
+
+
+  firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        console.log("email="+user.email);
+        document.cookie = "email="+user.email;
+        location.href = "dashboard"
+      } else {
+        // User is signed out.
+
+      }
+    });
+
+  </script>
 </body>
 </html>
