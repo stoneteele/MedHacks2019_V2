@@ -87,20 +87,20 @@
               base64Code = btoa(binaryString);
               var uid = getUID();
               var recordObject = {
-                "baseCode": base64Code,
-                "UID":  uid
+                "base64photo": base64Code,
+                "user_id":  uid
                 }
 
                 // construct an HTTP request
               var xhr = new XMLHttpRequest();
-              xhr.open('POST', 'https://elasticbeanstalk-us-east-1-443524287413.s3.amazonaws.com/', true);
+              xhr.open('POST', 'https://jw9mtag8w6.execute-api.us-east-1.amazonaws.com/prod?user_id=1&recipient_id', true);
               xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8',);
 
               // send the collected data as JSON
               xhr.send(JSON.stringify(recordObject));
 
-              xhr.onloadend = function () {
-                console.log("done")
+              xhr.onloadend = function (res) {
+                console.log("done: " + res)
                 console.log(JSON.stringify(recordObject));
               };
 
