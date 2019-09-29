@@ -1,4 +1,4 @@
-# X-Ray AI
+# Clairvoyance
 ## AI powered x-ray diagnostics
 
 ### Clone & run application
