@@ -40,13 +40,12 @@
               id="uploadXray"></form>-->
 
 
-<form action="http://elasticbeanstalk-us-east-1-443524287413.s3.amazonaws.com/" method="post" enctype="multipart/form-data">
+<form action="https://jw9mtag8w6.execute-api.us-east-1.amazonaws.com/prod/" method="post" enctype="multipart/form-data">
 <input type="hidden" id="fileKeyField" name="key" value="temp.png">
 <input type="file" name="file">
 <input type="submit">
 </form>
 
-              <script>  document.getElementById("fileKeyField").value = fileKey;</script>
               <!--<div class="row justify-content-lg-center" id="imageResultContainer" style="display: none">
                   <div class="col-lg-6 col-md-12">
                     <h2 id="result">Diagnosis: Acute Bronchitis - Accuracy 92%</h2>
