@@ -55,13 +55,13 @@
     <br>
 </div>
 
-              <!--<div class="row justify-content-lg-center" id="imageResultContainer" style="display: none">
+              <div class="row justify-content-lg-center" id="imageResultContainer" style="display: none">
                   <div class="col-lg-6 col-md-12">
                     <h2 id="result">Diagnosis: Acute Bronchitis - Accuracy 92%</h2>
                     <img id="resultImg" src="" />
                   </div>
 
-              </div>-->
+              </div>
 
 
               </div>
@@ -101,7 +101,8 @@
 
               xhr.onloadend = function (res) {
                 var json_data = JSON.parse(xhr.responseText)
-                console.log("done: " + json_data.body)
+                console.log(json_data.body)
+                document.getElementById("resultImg").src = "data:image/png;base64, "+json_data.body;
               };
 
           };
