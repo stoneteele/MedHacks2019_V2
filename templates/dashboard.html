@@ -40,7 +40,7 @@
               id="uploadXray"></form>-->
 <script>
 
-  if (sessionStorage.getItem("last_upload").length>0) {
+  if (sessionStorage.getItem("last_upload")) {
     document.getElementById("imageResultContainer").style.display = "block";
     document.getElementById("resultImg").src(sessionStorage.getItem("last_upload"))
   }
