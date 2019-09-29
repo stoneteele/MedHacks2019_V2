@@ -100,7 +100,8 @@
               xhr.send(JSON.stringify(recordObject));
 
               xhr.onloadend = function (res) {
-                console.log("done: " + res)
+                var json_data = xhr.responseText;
+                console.log("done: " + xhr.responseText)
                 console.log(JSON.stringify(recordObject));
               };
 
