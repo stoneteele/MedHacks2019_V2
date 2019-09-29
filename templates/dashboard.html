@@ -46,52 +46,14 @@
 <input type="submit">
 </form>
 
-              <script>
-              document.getElementById("fileKeyField").value = fileKey;
-              /*function getDataUri(url, callback) {
-                  var image = new Image();
-
-                  image.onload = function () {
-                      var canvas = document.createElement('canvas');
-                      canvas.width = this.naturalWidth; // or 'width' if you want a special/scaled size
-                      canvas.height = this.naturalHeight; // or 'height' if you want a special/scaled size
-
-                      canvas.getContext('2d').drawImage(this, 0, 0);
-
-                      // Get raw image data
-                      callback(canvas.toDataURL('image/png').replace(/^data:image\/(png|jpg);base64,/, ''));
-
-                      // ... or get as Data URI
-                      callback(canvas.toDataURL('image/png'));
-                  };
-
-                  image.src = url;
-              }
-
-
-                $("form").submit(function(e) {
-                    e.preventDefault();
-                    e.returnValue = false;
-
-                    var userId;
-                    var recipientId;
-
-                    // Usage
-                    getDataUri('/logo.png', function(dataUri) {
-                      // Do whatever you'd like with the Data URI!
-                      var imgBase64 = dataUri;
-                      console.log(imgBase64);
-                    });
-
-                });*/
-              </script>
-              <div class="row justify-content-lg-center" id="imageResultContainer" style="display: none">
+              <script>  document.getElementById("fileKeyField").value = fileKey;</script>
+              <!--<div class="row justify-content-lg-center" id="imageResultContainer" style="display: none">
                   <div class="col-lg-6 col-md-12">
                     <h2 id="result">Diagnosis: Acute Bronchitis - Accuracy 92%</h2>
                     <img id="resultImg" src="" />
                   </div>
 
-              </div>
+              </div>-->
 
 
               </div>
@@ -109,9 +71,7 @@
         var parts = value.split("; " + "uid" + "=");
         if (parts.length == 2) return parts.pop().split(";").shift();
       }
-      var now = new Date();
-      var fileKey = getUID() + "_" + now;
-      sessionStorage.setItem("last_upload",fileKey+".png");
+
   </script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script src="../static/js/dropzone.js"></script>
