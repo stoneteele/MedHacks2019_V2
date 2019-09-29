@@ -37,13 +37,25 @@
             <!--<form action="https://jw9mtag8w6.execute-api.us-east-1.amazonaws.com/prod/"
               class="dropzone"
               id="uploadXray"></form>-->
+<script>
+    function getUID() {
+      var value = "; " + document.cookie;
+      var parts = value.split("; " + "uid" + "=");
+      if (parts.length == 2) return parts.pop().split(";").shift();
+    }
+    var now = new Date();
+    var fileKey = getUID() + "_" + now;
+
+</script>
 
 <form action="http://elasticbeanstalk-us-east-1-443524287413.s3.amazonaws.com/" method="post" enctype="multipart/form-data">
-<input type="hidden" name="key" value="testImage.png">
+<input type="hidden" id="fileKeyField" name="key" value="temp.png">
 <input type="file" name="file">
 <input type="submit">
 </form>
+
               <script>
+              document.getElementById("fileKeyField").value = fileKey;
               /*function getDataUri(url, callback) {
                   var image = new Image();
 
