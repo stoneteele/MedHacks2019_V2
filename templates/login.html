@@ -154,6 +154,7 @@
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       console.log("email="+user.email);
+      document.cookie = "uid="+user.uid;
       document.cookie = "email="+user.email;
       location.href = "dashboard"
     } else {
