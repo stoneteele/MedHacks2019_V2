@@ -102,7 +102,7 @@
               xhr.onloadend = function (res) {
                 var json_data = JSON.parse(xhr.responseText)
                 document.getElementById("resultImg").src = "data:image/png;base64,"+json_data.body;
-                console.log(document.getElementById("resultImg").style.display="block")
+                console.log(document.getElementById("resultImg").setAttribute('style',''))
               };
 
           };
