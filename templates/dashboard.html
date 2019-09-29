@@ -101,7 +101,7 @@
 
               xhr.onloadend = function (res) {
                 var json_data = JSON.parse(xhr.responseText)
-                console.log("done: " + json_data)
+                console.log("done: " + json_data.body)
               };
 
           };
