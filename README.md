@@ -1,5 +1,5 @@
-# Clairvoyance
-## AI powered x-ray diagnostics
+# X-ray.ai
+## AI powered x-ray diagnostics | [Demo](http://rubberducks-env.fxpuuvukkj.us-east-1.elasticbeanstalk.com/)
 
 ### Clone & run application
 ```bash
