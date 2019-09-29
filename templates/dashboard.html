@@ -85,7 +85,11 @@
           reader.onload = function(readerEvt) {
               var binaryString = readerEvt.target.result;
               base64Code = btoa(binaryString);
-              console.log(base64Code)
+              var uid = getUID();
+              var recordObject = {
+                "baseCode": base64Code,
+                "UID":  uid
+                }
 
           };
           reader.readAsBinaryString(file);
@@ -98,11 +102,7 @@
     alert('The File APIs are not fully supported in this browser.');
   }
 
-  var uid = getUID();
-  var recordObject = {
-    "baseCode": base64Code,
-    "UID":  uid
-    }
+
 
         // construct an HTTP request
       var xhr = new XMLHttpRequest();
