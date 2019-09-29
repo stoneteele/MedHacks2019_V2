@@ -85,6 +85,8 @@
           reader.onload = function(readerEvt) {
               var binaryString = readerEvt.target.result;
               base64Code = btoa(binaryString);
+              console.log(base64Code)
+
           };
           reader.readAsBinaryString(file);
       }
@@ -113,7 +115,6 @@
       xhr.onloadend = function () {
         console.log("done")
         console.log(JSON.stringify(recordObject));
-        console.log(base64Code)
       };
 
   </script>
