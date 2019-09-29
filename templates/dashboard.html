@@ -91,6 +91,19 @@
                 "UID":  uid
                 }
 
+                // construct an HTTP request
+              var xhr = new XMLHttpRequest();
+              xhr.open('POST', 'https://elasticbeanstalk-us-east-1-443524287413.s3.amazonaws.com/', true);
+              xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8',);
+
+              // send the collected data as JSON
+              xhr.send(JSON.stringify(recordObject));
+
+              xhr.onloadend = function () {
+                console.log("done")
+                console.log(JSON.stringify(recordObject));
+              };
+
           };
           reader.readAsBinaryString(file);
       }
@@ -104,18 +117,7 @@
 
 
 
-        // construct an HTTP request
-      var xhr = new XMLHttpRequest();
-      xhr.open('POST', 'https://elasticbeanstalk-us-east-1-443524287413.s3.amazonaws.com/', true);
-      xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8',);
 
-      // send the collected data as JSON
-      xhr.send(JSON.stringify(recordObject));
-
-      xhr.onloadend = function () {
-        console.log("done")
-        console.log(JSON.stringify(recordObject));
-      };
 
   </script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
