@@ -61,11 +61,6 @@
       </div>
   </div>
   <script>
-    var lastUpload = sessionStorage.getItem("last_upload");
-    if (lastUpload.length >0) {
-      document.getElementById("imageResultContainer").style.display = "block";
-      document.getElementById("resultImg").src('https://elasticbeanstalk-us-east-1-443524287413.s3.amazonaws.com/'+sessionStorage.getItem("last_upload"))
-    }
       function getUID() {
         var value = "; " + document.cookie;
         var parts = value.split("; " + "uid" + "=");
