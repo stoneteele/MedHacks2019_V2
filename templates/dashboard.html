@@ -82,13 +82,10 @@
 
       if (files && file) {
           var reader = new FileReader();
-
           reader.onload = function(readerEvt) {
               var binaryString = readerEvt.target.result;
               base64Code = btoa(binaryString);
-              console.log(base64Code)
           };
-
           reader.readAsBinaryString(file);
       }
     };
@@ -98,6 +95,25 @@
   } else {
     alert('The File APIs are not fully supported in this browser.');
   }
+
+  var uid = getUID();
+  var recordObject = {
+    "baseCode": base64Code,
+    "UID":  uid
+    }
+
+        // construct an HTTP request
+      var xhr = new XMLHttpRequest();
+      xhr.open(form.method, form.action, true);
+      xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+
+      // send the collected data as JSON
+      xhr.send(JSON.stringify(recordObject));
+
+      xhr.onloadend = function () {
+        // done
+      };
+
   </script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script src="../static/js/dropzone.js"></script>
